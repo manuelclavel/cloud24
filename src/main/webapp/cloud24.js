@@ -5,12 +5,33 @@
 
 let click_button = document.getElementById("click_button");
 click_button.addEventListener("click", function(){
-    alert("Hi!");
+    
+    
+    
+    //alert("Hi!");
     //event.target.style.background = "red";
-    click_button.style.background = "red";
+    //click_button.style.background = "red";
+    
+    getTime();
     
     
-    const server_utc = Date.parse("2024-10-23T07:37:10.013394Z");
-    var date = new Date(server_utc);// Milliseconds to date
-    alert(date.toString());
+    
 })
+
+async function getData() {
+  const url = "/server_time";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const utc_server_time = await response.text();
+    const server_utc = Date.parse(utc_server_time);
+    const local_datetime = new Date(server_utc);// Milliseconds to date
+    alert(local_datetime.toString());
+    
+  } catch (error) {
+    console.error(error.message);
+  }
+}
