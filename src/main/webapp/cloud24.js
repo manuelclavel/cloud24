@@ -19,7 +19,7 @@ click_button.addEventListener("click", function(){
 })
 
 async function getDate() {
-  const url = "/server_time";
+  const url = "server_time";
   try {
     const response = await fetch(url);
     if (!response.ok) {
