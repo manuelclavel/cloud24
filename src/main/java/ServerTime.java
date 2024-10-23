@@ -2,7 +2,9 @@
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,8 +33,8 @@ public class ServerTime extends HttpServlet {
 
         resp.setContentType("text/plain");
         resp.setStatus(200);
-        LocalTime localTime = LocalTime.now();
-        writer.write(localTime.toString());
+        Instant instant = Instant.now();;
+        writer.write(instant.toString());
         writer.flush();
         writer.close();
     }
