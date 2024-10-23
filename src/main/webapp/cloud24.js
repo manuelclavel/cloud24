@@ -12,13 +12,13 @@ click_button.addEventListener("click", function(){
     //event.target.style.background = "red";
     //click_button.style.background = "red";
     
-    getTime();
+    getDate();
     
     
     
 })
 
-async function getData() {
+async function getDate() {
   const url = "/server_time";
   try {
     const response = await fetch(url);
