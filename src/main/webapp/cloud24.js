@@ -10,5 +10,7 @@ click_button.addEventListener("click", function(){
     click_button.style.background = "red";
     
     
-    console.log(Date.parse("2024-10-23T07:37:10.013394Z"));
+    const server_utc = Date.parse("2024-10-23T07:37:10.013394Z");
+    var date = new Date(server_utc);// Milliseconds to date
+    alert(date.toString());
 })
