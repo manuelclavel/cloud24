@@ -27,8 +27,8 @@ async function getDate() {
     }
 
     const utc_server_time = await response.text();
-    const server_utc = Date.parse(utc_server_time);
-    const local_datetime = new Date(server_utc);// Milliseconds to date
+    //const server_utc = Date.parse(utc_server_time);
+    const local_datetime = new Date(utc_server_time);// Milliseconds to date
     alert(local_datetime.toString());
     
   } catch (error) {
